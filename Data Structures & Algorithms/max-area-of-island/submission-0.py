@@ -1,7 +1,7 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         
-        # Here we are using DFS approach
+        # Here we are using DFS approach in a adjacency matrix
         
         # Taking care of the edge cases
         if len(grid) == 0:
