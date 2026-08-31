@@ -1,6 +1,8 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: list[list[int]]) -> bool:
         
+        # Here we are using DFS approach on a adjacency list
+
         # 1. SETUP THE CHEAT SHEET
         # We use a dictionary to map out the connections. 
         # Think of it like a list saying: "If you take Class A, it connects to Class B."
