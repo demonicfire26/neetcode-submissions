@@ -1,21 +1,27 @@
-from typing import List
-
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        # Dictionary to map sorted tuple of characters -> list of anagrams
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        
+        # 1. SETUP THE SHELF
+        # We make an empty dictionary. Think of this as a shelf where we will store 
+        # different boxes of words. Each box will have a special label on it.
         anagram_map = {}
         
+        # 2. SORTING THE WORDS
+        # We look at every single word in our list, one by one.
         for s in strs:
-            # Sort the string to get a canonical key for anagrams
-            # For example, "eat" and "tea" both become ['a','e','t']
+            
+            # We take the word and put its letters in alphabetical order to make a "secret code".
+            # For example, "eat", "tea", and "ate" all get the exact same secret code: ('a', 'e', 't').
+            # We use a 'tuple' (parentheses) because Python needs the label on the box to be permanent.
             key = tuple(sorted(s))
             
-            # If the key is not in the map, create a new list
+            # If we haven't seen this secret code before, we put a brand new, empty box on the shelf for it.
             if key not in anagram_map:
                 anagram_map[key] = []
             
-            # Append the original string to the corresponding group
+            # We toss the original word into the box that matches its secret code.
             anagram_map[key].append(s)
         
-        # Return all the grouped anagrams as a list of lists
+        # 3. HAND IN THE RESULT
+        # We take all the separate boxes off the shelf and hand them back as a final list of groups.
         return list(anagram_map.values())
