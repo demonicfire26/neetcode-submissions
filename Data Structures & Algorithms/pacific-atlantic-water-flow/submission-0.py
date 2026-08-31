@@ -3,6 +3,7 @@ from collections import deque
 class Solution:
     def pacificAtlantic(self, heights: list[list[int]]) -> list[list[int]]:
         
+        # Here we are using BFS on a adjacency matrix
         # 1. SETUP: Get the size of our island map.
         ROWS = len(heights)
         COLS = len(heights[0])
