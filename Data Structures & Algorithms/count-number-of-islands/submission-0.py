@@ -1,7 +1,7 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
 
-        # Here we areusing DFS approach
+        # Here we are using DFS approach in a adjacency matrix 
         # In this scenario, we traverse the grid until we reach an island, and when we reach it, we push this island in the water by marking to '0'. Then we look at all 4 directions from that sunken island to check if there are any other island right beside it. If it is there we push that island too in the water. We repeat this process using recursion to every adjacent island until we find no other connected island. Here we increment the island counter by 1 stating we have found 1 group of islands. We repeat this process over the whole grid till we sink all the ilands and have the final count of the number of islands in the grid.
 
         # Initialising the directions list
